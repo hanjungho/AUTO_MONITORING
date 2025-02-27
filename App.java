@@ -12,7 +12,23 @@ import java.util.logging.Logger;
 public class App {
     public static void main(String[] args) {
         Monitoring monitoring = new Monitoring();
-        monitoring.getNews(System.getenv("KEYWORD"), 10, 1, SortType.date);
+        Random rand = new Random();
+        int newsNumber = rand.nextInt(newsKeyword.values().length);
+        monitoring.getNews(newsKeyword.values()[newsNumber].getValue(), 10, 1, SortType.date);
+    }
+}
+
+enum newsKeyword {
+    침착맨("침착맨"), 김풍("김풍"), 철면수심("철면수심"), 궤도("궤도"), 주호민("주호민"), 주우재("주우재"), 단군("단군"), 매직박("매직박"), 통닭천사("통닭천사");
+
+    final String value;
+
+    newsKeyword(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
     }
 }
 
