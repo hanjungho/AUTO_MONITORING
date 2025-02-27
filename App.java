@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.logging.Logger;
 
-public class Solution05 {
+public class App {
     public static void main(String[] args) {
         Monitoring monitoring = new Monitoring();
         monitoring.getNews(System.getenv("KEYWORD"), 10, 1, SortType.date);
